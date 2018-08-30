@@ -8,9 +8,9 @@
     $ git clone https://github.com/HenriqueGarcez/Node-Geolocation-Weather-App.git
     $ npm install
  #  Usage
-    node app.js --address
+    node app.js --address "address"
     or
-    node app_promise.js --adress
+    node app_promise.js --adress ""
  #  Example
     node app.js --adress "Ocean Drive"
  #  References
