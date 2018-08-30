@@ -1,5 +1,5 @@
 # Node-Geolocation-Weather-App
- Nodejs Application that return weather information based on your location.
+ Nodejs Application that returns weather information based on your location.
  #  Features
   - Using request on callback functions
   - Managing http requests -> Geolocation API, Darksky API
