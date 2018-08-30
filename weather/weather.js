@@ -1,27 +1,28 @@
 const request = require('request');
 
+// custom callback fn
+// working with requests inside the callback
 var weatherRequest = (lat, lng, callback) => {
 
-// request, podendo passar o objeto options e um callback opcional
+
     request({
         url: `https://api.darksky.net/forecast/f2cf1dcd0dc5f6541c729fbee6ff212/${lat},${lng}`,
         json: true
     }, (error, response, body) => {
 
-        var json = JSON.stringify(body, undefined, 2); // transformando em JSON para visualizar todas as propriedades do objeto --> Bom para visualização apenas
+        var json = JSON.stringify(body, undefined, 2); // Data format for analysis
         console.log(json);
         console.log(response.statusCode);
 
         if(error){
-            callback('Erro no sistema de envio');
+            callback('Error: request could not be completed');
         }else if(body.results.length > 0){
             callback(undefined, {
                 temperature: body.currently.temperature
             })
         }else{
-            callback('Erro de retorno do web service');
+            callback('Error: Web service did not recognized lat or lng');
         }
-        //console.log(encode); Funciona pois o main ainda estará ativo durante as execuções das callbacks
     });
 }
 

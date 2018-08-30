@@ -12,9 +12,8 @@ var argv = yargs.options({
 }).help()
 .alias('help', 'h')
 .argv;
-  
-//console.log(argv);
 
+// Example of treating http requets with callbacks
 geolocation.geocodeRequest(argv.a, (errorMessage, results) => {
     if(errorMessage){
         console.log(errorMessage);
@@ -30,6 +29,5 @@ geolocation.geocodeRequest(argv.a, (errorMessage, results) => {
 });
 
 
-console.log('Fim main() app.js'); // Esse é o fim da main, após ele todas as funções de callback em fila são executadas.
-                          // Entrentanto, não siginifica que o main() foi encerrado, mas sim q ele chegou ao final
-                          // Qualquer variável de escopo do main ainda está disponível para utilização nas callbacks 
+console.log('Main() app.js'); // After the main() ends, callbacks that are in the queue begin to execute.
+                              // Besides, any variable who was set in the main escope, will be also avaiable inside the callbacks

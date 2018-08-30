@@ -3,13 +3,13 @@ const request = require('request');
 var geocodeRequest = (address, callback) => {
 
     var encode = encodeURIComponent(address);
-// request, podendo passar o objeto options e um callback opcional
+// request(options, callback(optional))
     request({
         url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + encode,
-        json: true
+        json: true // force Content-Type = application/json
     }, (error, response, body) => {
 
-        var json = JSON.stringify(body, undefined, 2); // transformando em JSON para visualizar todas as propriedades do objeto --> Bom para visualização apenas
+        var json = JSON.stringify(body, undefined, 2); // Data format for analysis
         console.log(json);
         console.log(response.statusCode);
 
