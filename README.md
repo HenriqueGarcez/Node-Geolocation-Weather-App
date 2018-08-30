@@ -15,4 +15,6 @@
     node app.js --adress "Ocean Drive"
  #  References
     This Application was created based in module 4 from The Complete Node.js Developer Course.
-    Link: https://www.udemy.com/the-complete-nodejs-developer-course-2/
+    Course: https://www.udemy.com/the-complete-nodejs-developer-course-2/
+    Geolocation API: https://developers.google.com/maps/documentation/geolocation/intro
+    Darksky API: https://darksky.net/dev
